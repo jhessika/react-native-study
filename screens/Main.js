@@ -7,13 +7,13 @@ class Main extends Component {
     return(
       <View style={ Styles.container }>
         <Image style={ Styles.image } source={require('../img/logo.png')} />
-        <Text style={ Styles.text }>Bem-vindo ao desafio da BeeStart</Text>
+        <Text style={ Styles.slogan }>Bem-vindo ao desafio da BeeStart</Text>
 
-        <TouchableHighlight>
-          <Text>Acessar o sistema</Text>
+        <TouchableHighlight style={ Styles.blackButton }>
+          <Text style={{ color: 'white',}}>Acessar o sistema</Text>
         </TouchableHighlight>
 
-        <TouchableHighlight>
+        <TouchableHighlight style={ Styles.whiteButton}>
           <Text>Cadastrar-se</Text>
         </TouchableHighlight>
 
@@ -29,14 +29,33 @@ const Styles = StyleSheet.create({
     justifyContent:'center',
     alignItems: 'center',
     flex: 1,
+    backgroundColor: '#cccc99',
   },
   image: {
     width: 200,
-    height: 200, 
+    height: 283, 
   },
-  text: {
+  slogan: {
     marginBottom: 100,
+    marginTop: 20,
+    color: 'white',
+  },
+  blackButton: {
+    backgroundColor: 'black',
+    padding: 25,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: 'black',
+  },
+  whiteButton: {
+    backgroundColor: 'white',
+    padding: 25,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: 'white',
+    marginTop: 20,
   }
+
 })
 
 
