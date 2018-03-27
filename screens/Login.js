@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, Platform, StyleSheet, Image, TextInput, TouchableHighlight, } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
 class Login extends Component {
   render(){
@@ -12,12 +13,11 @@ class Login extends Component {
         <View style={ Styles.form }>
           <TextInput placeholder='E-Mail' style={ Styles.emailInput }/>
           <TextInput placeholder='Password' secureTextEntry={true} style={ Styles.emailInput }/>
-          <TouchableHighlight style={ Styles.blackButton }>
+          <TouchableHighlight onPress={ () => this.props.navigation.navigate('Dashboard')} style={ Styles.blackButton }>
             <Text style={{ color: 'white',}}>Login</Text>
           </TouchableHighlight>
         </View>
       </View>
-
     )
   }
 }

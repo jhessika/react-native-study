@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, Image, TouchableHighlight, View, StyleSheet } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
 
 class Main extends Component {
@@ -9,11 +10,11 @@ class Main extends Component {
         <Image style={ Styles.image } source={require('../img/logo.png')} />
         <Text style={ Styles.slogan }>Bem-vindo ao desafio da BeeStart</Text>
 
-        <TouchableHighlight style={ Styles.blackButton }>
+        <TouchableHighlight onPress={ () => this.props.navigation.navigate('Login')} style={ Styles.blackButton }>
           <Text style={{ color: 'white',}}>Acessar o sistema</Text>
         </TouchableHighlight>
 
-        <TouchableHighlight style={ Styles.whiteButton}>
+        <TouchableHighlight onPress={ () => this.props.navigation.navigate('SignUp')} style={ Styles.whiteButton}>
           <Text>Cadastrar-se</Text>
         </TouchableHighlight>
 

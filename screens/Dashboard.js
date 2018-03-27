@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, Platform, StyleSheet, Image, TextInput, TouchableHighlight, } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
 class Dashboard extends Component {
   render(){
@@ -10,7 +11,7 @@ class Dashboard extends Component {
               <Image style={ Styles.image } source={require('../img/icon.png')}/>
           </View>
           <Text style={ Styles.Text}> “Desafio	Concluído	com	sucesso!” </Text>
-          <TouchableHighlight style={ Styles.blackButton}>
+          <TouchableHighlight onPress={ () => this.props.navigation.navigate('Main')} style={ Styles.blackButton}>
             <Text style={{ color: 'white',}}> Sair </Text>
           </TouchableHighlight>
       </View>
