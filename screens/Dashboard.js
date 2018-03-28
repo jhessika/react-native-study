@@ -6,14 +6,10 @@ class Dashboard extends Component {
   render(){
     return(
       <View style={ Styles.container }>
-        <View style={{ flex: 0, height: (Platform.OS === 'ios') ? 20 : 0, width: '100%'}}/>
-          <View style={ Styles.header}>
-              <Image style={ Styles.image } source={require('../img/icon.png')}/>
-          </View>
-          <Text style={ Styles.Text}> “Desafio	Concluído	com	sucesso!” </Text>
-          <TouchableHighlight onPress={ () => this.props.navigation.navigate('Main')} style={ Styles.blackButton}>
-            <Text style={{ color: 'white',}}> Sair </Text>
-          </TouchableHighlight>
+        <Text style={ Styles.Text}> “Desafio	Concluído	com	sucesso!” </Text>
+        <TouchableHighlight onPress={ () => this.props.navigation.navigate('Main')} style={ Styles.blackButton}>
+          <Text style={{ color: 'white',}}> Sair </Text>
+        </TouchableHighlight>
       </View>
     )
   }
@@ -22,11 +18,15 @@ export default Dashboard;
 
 const Styles = StyleSheet.create({
   container: {
-    backgroundColor: '#cccc99',
+    backgroundColor: '#f8c215',
     flex: 1,
+    justifyContent:'center',
+    alignItems: 'center',
   },
   Text: {
-    padding: 80,
+    color: '#fff',
+    fontSize: 18,
+    marginBottom: 40,
   },
   header: {
     height: 50,
@@ -44,6 +44,7 @@ const Styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderColor: 'black',
+
   },
 })
 

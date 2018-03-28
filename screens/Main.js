@@ -4,6 +4,9 @@ import { StackNavigator } from 'react-navigation';
 
 
 class Main extends Component {
+  static navigationOptions = {
+    header: null,
+  }
   render(){
     return(
       <View style={ Styles.container }>
@@ -30,7 +33,7 @@ const Styles = StyleSheet.create({
     justifyContent:'center',
     alignItems: 'center',
     flex: 1,
-    backgroundColor: '#cccc99',
+    backgroundColor: '#d6d5c1',
   },
   image: {
     width: 200,
@@ -40,13 +43,14 @@ const Styles = StyleSheet.create({
     marginBottom: 100,
     marginTop: 20,
     color: 'white',
+    fontSize: 18,
   },
   blackButton: {
-    backgroundColor: 'black',
+    backgroundColor: '#f8c215',
     padding: 25,
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: '#f8c215',
   },
   whiteButton: {
     backgroundColor: 'white',

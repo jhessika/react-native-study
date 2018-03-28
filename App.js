@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 import Main from './screens/Main';
@@ -31,6 +31,13 @@ export default StackNavigator ({
   },
 }, {
   initialRouteName: 'Main',
+  navigationOptions: {
+    headerTitle: <Image style={{ height: 40, width: 40,}} source={require('./img/icon.png')}/>,
+    headerStyle: {
+      backgroundColor: '#fff',
+    },
+    headerTintColor: 'black',
+  }
 })
 
 

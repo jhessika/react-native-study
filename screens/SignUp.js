@@ -1,19 +1,39 @@
 import React, { Component } from 'react';
-import { Text, View, Platform, StyleSheet, Image, TextInput, TouchableHighlight } from 'react-native';
+import { Text, View, Platform, StyleSheet, Image, TextInput, TouchableHighlight, Alert, } from 'react-native';
 
 class SignUp extends Component {
+  constructor(props){
+    super(props)
+    this.state ={ nome: '', email: '', password: '', }
+  }
+  handleSignUp = () => {
+    const emailreg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
+    const isValid = (this.state.nome !== '' || this.state.email !== '' || this.state.password !== '') && emailreg.test(this.state.email)
+    if(isValid){
+      Alert.alert(
+        'Sucesso',
+        'Você foi cadastrado com sucesso!',
+        [
+          { text: 'OK', onPress: () => this.props.navigation.navigate('Main') }
+        ]
+      )
+    }else{
+      Alert.alert(
+        'Erro',
+        'Verifique os dados preenchidos',
+      )
+    }
+  }
+
+  
   render(){
     return(
       <View style={ Styles.container}>
-        <View style={{ flex: 0, height: (Platform.OS === 'ios') ? 20 : 0, width: '100%'}}/>
-        <View style={ Styles.header}>
-          <Image style={ Styles.image } source={require('../img/icon.png')}/>
-        </View>
         <View style={ Styles.form }>
-          <TextInput placeholder='Nome' style={ Styles.input }></TextInput>
-          <TextInput placeholder='E-mail' style={ Styles.input }></TextInput>
-          <TextInput placeholder='Password' secureTextEntry={true} style={ Styles.input }/>
-          <TouchableHighlight style={ Styles.blackButton }>
+          <TextInput onChangeText={(text) => this.setState({nome: text})} placeholder='Nome' style={ Styles.input }></TextInput>
+          <TextInput onChangeText={(text) => this.setState({email: text})} placeholder='E-mail' style={ Styles.input }></TextInput>
+          <TextInput onChangeText={(text) => this.setState({password: text})} placeholder='Password' secureTextEntry={true} style={ Styles.input }/>
+          <TouchableHighlight onPress={this.handleSignUp} style={ Styles.blackButton }>
             <Text style={{ color: 'white',}}> Cadastre-se </Text>
           </TouchableHighlight>
         </View>
@@ -26,7 +46,7 @@ export default SignUp;
 
 const Styles = StyleSheet.create({
   container: {
-    backgroundColor: '#cccc99',
+    backgroundColor: '#f8c215',
     flex: 1,
   },
   header: {
@@ -46,7 +66,6 @@ const Styles = StyleSheet.create({
     backgroundColor: 'white',
     width: '80%',
     marginBottom: 10,
-
   },
   blackButton: {
     backgroundColor: 'black',
