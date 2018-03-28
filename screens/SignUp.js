@@ -28,7 +28,7 @@ class SignUp extends Component {
   
   render(){
     return(
-      <KeyboardAvoidingView behavior='padding'  style={ Styles.container}>
+      <KeyboardAvoidingView  behavior='padding'  style={ Styles.container}>
         <View style={ Styles.form }>
           <TextInput onChangeText={(text) => this.setState({nome: text})} placeholder='Nome' style={ Styles.input }></TextInput>
           <TextInput onChangeText={(text) => this.setState({email: text})} placeholder='E-mail' style={ Styles.input }></TextInput>
@@ -62,7 +62,7 @@ const Styles = StyleSheet.create({
   input: {
     borderWidth: 2,
     borderColor: 'black',
-    padding: 20,
+    padding: 15,
     backgroundColor: 'white',
     width: '80%',
     marginBottom: 10,

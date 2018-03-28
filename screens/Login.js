@@ -52,7 +52,7 @@ const Styles = StyleSheet.create({
   emailInput: {
     borderWidth: 2,
     borderColor: 'black',
-    padding: 20,
+    padding: 15,
     backgroundColor: 'white',
     width: '80%',
     marginBottom: 10,
