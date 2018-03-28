@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
-import { Text, View, Platform, StyleSheet, Image, TextInput, TouchableHighlight, } from 'react-native';
+import { Text, View, Platform, StyleSheet, Image, TextInput, TouchableHighlight, Alert, } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 class Dashboard extends Component {
+  handleLogout = () => {
+    Alert.alert(
+      'Tem certeza?',
+      'Deseja realmente sair?',
+      [
+        { text: 'SIM', onPress: () => this.props.navigation.navigate('Main') },
+        { text: 'NÃO', style: 'cancel', }
+      ]
+    )
+  }
   render(){
     return(
       <View style={ Styles.container }>
         <Text style={ Styles.Text}> “Desafio	Concluído	com	sucesso!” </Text>
-        <TouchableHighlight onPress={ () => this.props.navigation.navigate('Main')} style={ Styles.blackButton}>
+        <TouchableHighlight onPress={ this.handleLogout } style={ Styles.blackButton}>
           <Text style={{ color: 'white',}}> Sair </Text>
         </TouchableHighlight>
       </View>

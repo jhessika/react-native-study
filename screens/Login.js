@@ -14,7 +14,7 @@ class Login extends Component {
       Keyboard.dismiss()
       Alert.alert(
         'Erro',
-        '“Verifique os dados preenchidos”.',
+        'Verifique os dados preenchidos.',
       )
     }
   
