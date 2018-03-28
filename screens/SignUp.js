@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Platform, StyleSheet, Image, TextInput, TouchableHighlight, Alert, } from 'react-native';
+import { Text, View, Platform, StyleSheet, Image, TextInput, TouchableHighlight, Alert, KeyboardAvoidingView, } from 'react-native';
 
 class SignUp extends Component {
   constructor(props){
@@ -28,7 +28,7 @@ class SignUp extends Component {
   
   render(){
     return(
-      <View style={ Styles.container}>
+      <KeyboardAvoidingView behavior='padding'  style={ Styles.container}>
         <View style={ Styles.form }>
           <TextInput onChangeText={(text) => this.setState({nome: text})} placeholder='Nome' style={ Styles.input }></TextInput>
           <TextInput onChangeText={(text) => this.setState({email: text})} placeholder='E-mail' style={ Styles.input }></TextInput>
@@ -37,7 +37,7 @@ class SignUp extends Component {
             <Text style={{ color: 'white',}}> Cadastre-se </Text>
           </TouchableHighlight>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     )
   }
 }
@@ -69,7 +69,7 @@ const Styles = StyleSheet.create({
   },
   blackButton: {
     backgroundColor: 'black',
-    padding: 25,
+    padding: 15,
     borderRadius: 10,
     borderWidth: 1,
     borderColor: 'black',

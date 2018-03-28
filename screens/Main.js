@@ -13,7 +13,7 @@ class Main extends Component {
         <Image style={ Styles.image } source={require('../img/logo.png')} />
         <Text style={ Styles.slogan }>Bem-vindo ao desafio da BeeStart</Text>
 
-        <TouchableHighlight onPress={ () => this.props.navigation.navigate('Login')} style={ Styles.blackButton }>
+        <TouchableHighlight onPress={ () => this.props.navigation.navigate('Login')} style={ Styles.yellowButton }>
           <Text style={{ color: 'white',}}>Acessar o sistema</Text>
         </TouchableHighlight>
 
@@ -40,21 +40,21 @@ const Styles = StyleSheet.create({
     height: 283, 
   },
   slogan: {
-    marginBottom: 100,
+    marginBottom: 50,
     marginTop: 20,
     color: 'white',
     fontSize: 18,
   },
-  blackButton: {
+  yellowButton: {
     backgroundColor: '#f8c215',
-    padding: 25,
+    padding: 15,
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#f8c215',
   },
   whiteButton: {
     backgroundColor: 'white',
-    padding: 25,
+    padding: 15,
     borderRadius: 10,
     borderWidth: 1,
     borderColor: 'white',

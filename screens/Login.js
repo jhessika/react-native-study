@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Platform, StyleSheet, Image, TextInput, TouchableHighlight, Alert, Keyboard } from 'react-native';
+import { Text, View, Platform, StyleSheet, Image, TextInput, TouchableHighlight, Alert, Keyboard, KeyboardAvoidingView, } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 class Login extends Component {
@@ -17,11 +17,10 @@ class Login extends Component {
         'Verifique os dados preenchidos.',
       )
     }
-  
   }
   render(){
     return(
-      <View style={ Styles.container }>
+      <KeyboardAvoidingView behavior='padding' style={ Styles.container }>
         <View style={ Styles.form }>
           <TextInput onChangeText={(text) => this.setState({email: text})} placeholder='E-Mail' style={ Styles.emailInput }/>
           <TextInput onChangeText={(text) => this.setState({password: text})} placeholder='Password' secureTextEntry={true} style={ Styles.emailInput }/>
@@ -29,7 +28,7 @@ class Login extends Component {
             <Text style={{ color: 'white',}}>Login</Text>
           </TouchableHighlight>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     )
   }
 }
@@ -60,7 +59,7 @@ const Styles = StyleSheet.create({
   },
   blackButton: {
     backgroundColor: 'black',
-    padding: 25,
+    padding: 15,
     borderRadius: 10,
     borderWidth: 1,
     borderColor: 'black',

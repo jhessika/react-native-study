@@ -50,7 +50,7 @@ const Styles = StyleSheet.create({
   },
   blackButton: {
     backgroundColor: 'black',
-    padding: 25,
+    padding: 15,
     borderRadius: 10,
     borderWidth: 1,
     borderColor: 'black',
