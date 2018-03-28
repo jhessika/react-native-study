@@ -1,5 +1,7 @@
 {
   "expo": {
+    "name": "Desafio BeeStart",
+    "icon": "./img/icon.png",
     "sdkVersion": "25.0.0"
   }
 }
