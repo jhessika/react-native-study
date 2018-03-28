@@ -8,10 +8,10 @@ class Login extends Component {
     this.state = {email: '', password:''}
   }
   handleLogin = () => {
+    Keyboard.dismiss()
     if(this.state.email === 'teste@besstart.com.br' && this.state.password === 'appsimples'){
       this.props.navigation.navigate('Dashboard')
-    }else{
-      Keyboard.dismiss()
+    } else {
       Alert.alert(
         'Erro',
         'Verifique os dados preenchidos.',
