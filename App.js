@@ -7,15 +7,6 @@ import Login from './screens/Login';
 import Dashboard from './screens/Dashboard';
 import SignUp from './screens/SignUp';
 
-
-// export default class App extends React.Component {
-//   render() {
-//     return (
-//       <SignUp/>
-//     );
-//   }
-// }
-
 export default StackNavigator ({
   Main:{
     screen: Main,
@@ -39,7 +30,6 @@ export default StackNavigator ({
     headerTintColor: 'black',
   }
 })
-
 
 
 const styles = StyleSheet.create({

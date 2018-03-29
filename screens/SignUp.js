@@ -4,10 +4,10 @@ import { Text, View, Platform, StyleSheet, Image, TextInput, TouchableHighlight,
 class SignUp extends Component {
   constructor(props){
     super(props)
-    this.state ={ nome: '', email: '', password: '', }
+    this.state = { nome: '', email: '', password: '', }
   }
   handleSignUp = () => {
-    const emailreg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
+    const emailreg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     const isValid = (this.state.nome !== '' || this.state.email !== '' || this.state.password !== '') && emailreg.test(this.state.email)
     if(isValid){
       Alert.alert(
@@ -17,7 +17,7 @@ class SignUp extends Component {
           { text: 'OK', onPress: () => this.props.navigation.navigate('Main') }
         ]
       )
-    }else{
+    } else {
       Alert.alert(
         'Erro',
         'Verifique os dados preenchidos',

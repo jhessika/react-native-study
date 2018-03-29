@@ -9,7 +9,7 @@ class Dashboard extends Component {
       'Deseja realmente sair?',
       [
         { text: 'SIM', onPress: () => this.props.navigation.navigate('Main') },
-        { text: 'NÃO', style: 'cancel', }
+        { text: 'NÃO', style: 'cancel', },
       ]
     )
   }
@@ -54,7 +54,6 @@ const Styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderColor: 'black',
-
   },
 })
 
